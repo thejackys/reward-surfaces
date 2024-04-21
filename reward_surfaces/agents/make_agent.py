@@ -44,6 +44,9 @@ def make_agent(agent_name, env_name, save_dir, hyperparams, device="cuda", pretr
     if 'rainbow' == agent_name:
         return RainbowTrainer(env_name, device=device, **hyperparams)
     elif "SB3_OFF" == agent_name:
+        algo_name = hyperparams.pop('ALGO')
+        manager = ExperimentManager(algo_name.lower(), env_name, save_dir, hyperparams=hyperparams,
+                                    pretraining=pretraining, verbose=1, device=device)
         env_fn = make_vec_env_fn(env_name)
         env = env_fn()
         algo = SB3_OFF_ALGOS[hyperparams.pop('ALGO')]

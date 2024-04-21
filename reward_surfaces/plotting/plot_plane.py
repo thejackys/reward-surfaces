@@ -20,7 +20,7 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
     X = x_coords
     Y = y_coords
     Z = z_values
-
+    
     title = env_name
 
     # Remove Atari name options
@@ -34,6 +34,7 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
     env_name = env_name.replace("Deterministic", "")
 
     # Construct Title
+    print(env_name)
     if env_name in ENVCLASSES:
         title += " | " + ENVCLASSES[env_name]
     else:
@@ -53,11 +54,14 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
     if logscale == "auto":
         if np.max(Z) - np.min(Z) > 10000:
             logscale = True
+        else:
+            logscale = False
     elif logscale == "on":
         logscale = True
     else:
+        # print('setting logscale:true')
         logscale = False
-
+        
     # --------------------------------------------------------------------
     # Plot 2D contours
     # --------------------------------------------------------------------
@@ -121,7 +125,6 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
         # Scale X and Y values by the step size magnitude
         X = magnitude * X
         Y = magnitude * Y
-
         real_Z = Z.copy()
         # Take numerically stable log of data
         if logscale:
@@ -131,21 +134,19 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
             Z_pos = np.log10(1+Z_pos)
             Z[Z < 0] = Z_neg
             Z[Z >= 0] = Z_pos
-
         # Plot surface
         surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, linewidth=0, antialiased=False, zorder=5)
-
+        
         # Add max text
         # center = len(Z) // 2
         # ax.text(0.05, 0.05, np.max(Z), f"{real_Z[center][center]:.2f}", color='black')
-
         # Plot center line above surface
         Z_range = abs(np.max(Z) - np.min(Z))
         zline_above = np.linspace(Z[len(Z) // 2][len(Z[0]) // 2], np.max(Z) + (Z_range * 0.1), 4)
         xline_above = 0 * zline_above
         yline_above = 0 * zline_above
         ax.plot3D(xline_above, yline_above, zline_above, 'black', zorder=10)
-
+        # print(Z)
         # Plot center line below surface
         zline_below = np.linspace(Z[len(Z) // 2][len(Z[0]) // 2], np.min(Z) - (Z_range * 0.1), 4)
         xline_below = 0 * zline_below
@@ -195,6 +196,7 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
             ax.set_zticklabels(ztick_labels)
             if file_type != "pgf":
                 ax.set_zticklabels(ztick_labels, **tnrfont)
+
         else:
             fig.colorbar(surf, shrink=0.5, aspect=5, pad=0.05)
 
@@ -210,6 +212,7 @@ def plot_2d_contour(x_coords, y_coords, z_values, magnitude, base_name, vmin=0.1
 
 
 def generate_vtp(xcoordinates, ycoordinates, vals, vtp_file, log=False, zmax=-1, interp=-1):
+
     # Set this to True to generate points
     show_points = False
     # Set this to True to generate polygons
@@ -450,8 +453,9 @@ def plot_plane(csv_fname, out_name=None, env_name=None, key_name="episode_reward
         return None
     xvals = (data['dim0'].values)
     yvals = (data['dim1'].values)
+    print(f'key_name:{key_name}')
     zvals = (data[key_name].values)
-
+    # print(zvals)
     # Sort x, y, z values according to x + 1000000(dsize^2)(y)
     idxs = np.argsort(xvals + yvals*1000000*len(data['dim0']))
     xvals = xvals[idxs].reshape(dsize, dsize)
