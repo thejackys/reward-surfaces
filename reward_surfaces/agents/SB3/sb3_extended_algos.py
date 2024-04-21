@@ -1,6 +1,7 @@
 from stable_baselines3.a2c import A2C
 from stable_baselines3.ppo import PPO
 from stable_baselines3.sac import SAC
+from stable_baselines3 import DQN
 import numpy as np
 import torch
 import torch as th
@@ -297,3 +298,6 @@ class ExtSAC(SAC, HeshCalcOfflineMixin):
         # Optimization step
 
         return loss, grad_f
+
+class ExtDQN(DQN, HeshCalcOfflineMixin):
+    raise NotImplementedError

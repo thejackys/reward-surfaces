@@ -139,8 +139,16 @@ class EvalParamCallback(EvalCallback):
         verbose: int = 0,
         warn: bool = True,
     ):
-        super(EvalParamCallback, self).__init__(eval_env, callback_on_new_best, n_eval_episodes, eval_freq, log_path,
-                                                best_model_save_path, deterministic, render, verbose, warn)
+        super(EvalParamCallback, self).__init__(eval_env, 
+                                                callback_on_new_best = callback_on_new_best, 
+                                                n_eval_episodes = n_eval_episodes, 
+                                                eval_freq = eval_freq, 
+                                                log_path = log_path,
+                                                best_model_save_path = best_model_save_path, 
+                                                deterministic = deterministic,
+                                                render = render,
+                                                verbose = verbose,
+                                                warn = warn)
         self.old_params = None
         self.save_folders = []
         self.log_path = log_path

@@ -1,6 +1,7 @@
 from stable_baselines3.ddpg import DDPG
 from stable_baselines3.td3 import TD3
 from stable_baselines3.her import HerReplayBuffer
+from stable_baselines3 import DQN
 import gym
 from .SB3 import SB3OnPolicyTrainer, SB3OffPolicyTrainer, SB3HerPolicyTrainer
 from .rainbow.rainbow_trainer import RainbowTrainer
@@ -15,6 +16,7 @@ SB3_OFF_ALGOS = {
     "DDPG": DDPG,
     "TD3": TD3,
     "SAC": ExtSAC,
+    "DQN": DQN,
 }
 
 
@@ -47,12 +49,15 @@ def make_agent(agent_name, env_name, save_dir, hyperparams, device="cuda", pretr
         algo_name = hyperparams.pop('ALGO')
         manager = ExperimentManager(algo_name.lower(), env_name, save_dir, hyperparams=hyperparams,
                                     pretraining=pretraining, verbose=1, device=device)
-        env_fn = make_vec_env_fn(env_name)
+        model, _, steps = manager.setup_experiment()
+        env_fn = make_vec_env_fn(env_name, manager)
+        eval_env_fn = make_vec_env_fn(env_name, manager, is_eval=True)
         env = env_fn()
-        algo = SB3_OFF_ALGOS[hyperparams.pop('ALGO')]
+        algo = SB3_OFF_ALGOS[algo_name]
         model = "MlpPolicy" if len(env.observation_space.shape) != 3 else "CnnPolicy"
         alg = algo(model, env, device=device, **hyperparams)
-        return SB3OffPolicyTrainer(env_fn, alg)
+        return SB3OffPolicyTrainer(env_fn, alg, manager.n_envs, env_name, eval_env_fn=eval_env_fn,
+                                   pretraining=pretraining, eval_freq=eval_freq, n_eval_episodes=n_eval_episodes),steps
     elif "SB3_ON" == agent_name:
         algo_name = hyperparams.pop('ALGO')
         manager = ExperimentManager(algo_name.lower(), env_name, save_dir, hyperparams=hyperparams,

@@ -31,6 +31,7 @@ from stable_baselines3.common.vec_env import (DummyVecEnv,
 from torch import nn as nn  # noqa: F401
 from stable_baselines3.ddpg import DDPG
 from stable_baselines3.td3 import TD3
+from stable_baselines3 import DQN
 from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC
 ALGOS = {
     "a2c": ExtA2C,
@@ -38,6 +39,7 @@ ALGOS = {
     "ddpg": DDPG,
     "td3": TD3,
     "sac": ExtSAC,
+    "dqn": DQN,
 }
 
 
