@@ -230,10 +230,16 @@ def compute_grad_mags_batch(evaluator, params, action_evaluator, num_episodes, n
         assert len(episode_actions) == len(episode_returns)
         for idx in range(0, len(episode_actions), batch_size):
             clipped_batch_size = min(batch_size, len(episode_actions) - idx)
-            # Access batch
-            batch_states = torch.tensor(episode_states[idx:idx + clipped_batch_size], device=device)
-            batch_actions = torch.tensor(episode_actions[idx:idx + clipped_batch_size], device=device)
-            batch_returns = torch.tensor(episode_returns[idx:idx + clipped_batch_size], device=device)
+            # Convert the list of NumPy arrays to a single NumPy array
+            batch_states_array = np.array(episode_states[idx:idx + clipped_batch_size])
+            batch_actions_array = np.array(episode_actions[idx:idx + clipped_batch_size])
+            batch_returns_array = np.array(episode_returns[idx:idx + clipped_batch_size])
+            
+            # Create tensors from the single NumPy arrays
+            batch_states = torch.from_numpy(batch_states_array).to(device)
+            batch_actions = torch.from_numpy(batch_actions_array).to(device)
+            batch_returns = torch.from_numpy(batch_returns_array).to(device)
+            
             # Fix batch dimensions
             batch_states = torch.squeeze(batch_states, dim=1)
             batch_actions = batch_actions.reshape(clipped_batch_size, -1)
@@ -276,10 +282,16 @@ def compute_policy_gradient_batch(evaluator, action_evaluator, num_episodes, num
                                                                       action_evaluator.gamma,
                                                                       "UNUSED",
                                                                       gae_lambda=1.0)
+    test_states_array = np.array(test_states[0][0:2])
+    test_actions_array = np.array(test_actions[0][0:2])
 
-    params = get_used_params(action_evaluator,
-                             torch.squeeze(torch.tensor(test_states[0][0:2], device=device), dim=1),
-                             torch.tensor(test_actions[0][0:2], device=action_evaluator.device))
+    params = get_used_params(action_evaluator, 
+                             torch.squeeze(torch.from_numpy(test_states_array).to(device), dim=1), 
+                             torch.from_numpy(test_actions_array).to(action_evaluator.device))
+
+    # params = get_used_params(action_evaluator,
+    #                          torch.squeeze(torch.tensor(test_states[0][0:2], device=device), dim=1),
+    #                          torch.tensor(test_actions[0][0:2], device=action_evaluator.device))
 
     grad_mag, grad_dir = compute_grad_mags_batch(evaluator, params, action_evaluator, num_episodes, num_steps)
 
