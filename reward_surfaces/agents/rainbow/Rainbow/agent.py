@@ -113,6 +113,7 @@ class Agent():
     def closure():
       idxs, states, actions, returns, next_states, nonterminals, weights = sample
       loss = self.get_loss(idxs, states, actions, returns, next_states, nonterminals, weights)
+      loss.backward()
       return loss
       
     self.optimiser.step(closure)
