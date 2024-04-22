@@ -92,7 +92,7 @@ def save_results(agent, info, out_dir, results, job_name):
 
     if not info['calc_hesh'] and not info['est_hesh']:
         evaluator = agent.evaluator()
-        eval_results = evaluate(evaluator, info['num_episodes'], info['num_steps'])
+        eval_results = evaluate(evaluator, info)
         results.update(eval_results)
 
     print("dumping results")

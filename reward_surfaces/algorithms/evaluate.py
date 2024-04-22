@@ -2,17 +2,25 @@ import torch
 import numpy as np
 
 
-def generate_data(evaluator, num_episodes, num_steps):
+def generate_data(evaluator, info_dict):
     all_datas = []
     tot_steps = 0
     tot_eps = 0
     tot_rew = 0
     done = False
+    num_episodes = (info_dict['num_episodes'])
+    num_steps = (info_dict['num_steps'])
 
     while not done or (tot_eps < num_episodes and tot_steps < num_steps):
         with torch.no_grad():
             # Next state can be evaluated determinsitically for testing
-            rew, original_rew, done, value, _, _, info = evaluator._next_state_act()
+            if info_dict['agent_name'] == 'SB3_ON':
+                rew, original_rew, done, value, _, _, info = evaluator._next_state_act()
+            else:
+                #SB3_OFF
+                rew, original_rew, done, value, _, _, info = evaluator._next_state_act()
+
+        
         all_datas.append((original_rew, done, value))
         tot_steps += 1
         tot_rew += original_rew
@@ -21,8 +29,8 @@ def generate_data(evaluator, num_episodes, num_steps):
     return all_datas
 
 
-def evaluate(evaluator, num_episodes, num_steps):
-    all_datas = generate_data(evaluator, num_episodes, num_steps)
+def evaluate(evaluator, info):
+    all_datas = generate_data(evaluator, info)
     return calculate_stats(all_datas, evaluator.gamma)
 
 

@@ -26,6 +26,7 @@ Pendulum-v1:
   ent_coef: 0.0
   learning_rate: !!float 3e-4
   clip_range: 0.2
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 # Tuned
 CartPole-v1:
@@ -40,6 +41,7 @@ CartPole-v1:
   ent_coef: 0.0
   learning_rate: lin_0.001
   clip_range: lin_0.2
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 MountainCar-v0:
   normalize: true
@@ -51,6 +53,7 @@ MountainCar-v0:
   gamma: 0.99
   n_epochs: 4
   ent_coef: 0.0
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 # Tuned
 MountainCarContinuous-v0:
@@ -244,7 +247,7 @@ MinitaurBulletDuckEnv-v0:
   clip_range: 0.2
 
 # To be tuned
-Humanoid-v3:
+HumanoidBulletEnv-v0:
   normalize: true
   n_envs: 8
   n_timesteps: !!float 1e7

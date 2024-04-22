@@ -36,8 +36,10 @@ from stable_baselines3 import DQN
 from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, SAM_DDPG, SAM_EXTPPO
 ALGOS = {
     "a2c": ExtA2C,
-    "ppo": SAM_EXTPPO,
-    "ddpg": SAM_DDPG,
+    "ppo": ExtPPO,
+    "ppo_sam": SAM_EXTPPO,
+    "ddpg": DDPG,
+    "ddpg_sam": SAM_DDPG,
     "td3": TD3,
     "sac": ExtSAC,
     "dqn": DQN,

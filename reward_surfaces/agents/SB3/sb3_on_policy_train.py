@@ -431,9 +431,15 @@ class OffPolicyEvaluator(OnPolicyEvaluator):
 
         action = action.detach().cpu().numpy()
         self.state, rew, done, info = self.env.step(action)
-        return rew[0], done[0], value[0].item(), old_state, action
-
-
+        original_rew = 0
+        if hasattr(self.env, "n_stack"):
+            original_rew = sum(self.env.envs[0].rewards[-self.env.n_stack:])
+        else:
+            if len(self.env.envs[0].rewards) > 0:
+                original_rew = self.env.envs[0].rewards[-1]
+        return rew[0], original_rew, done[0], value[0].item(), old_state, action, info[0]
+        # return rew[0], done[0], value[0].item(), old_state, action
+        
 class SB3OffPolicyTrainer(SB3OnPolicyTrainer):
     def evaluator(self, eval_trainer=None):
         return OffPolicyEvaluator(self.eval_env_fn(), self.algorithm.gamma, self.algorithm, eval_trainer)

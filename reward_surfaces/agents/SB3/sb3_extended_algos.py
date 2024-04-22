@@ -459,7 +459,68 @@ class ExtSAC(SAC, HeshCalcOfflineMixin):
 
         return loss, grad_f
 
-class SAM_DDPG(DDPG):
+class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
+    def parameters(self):
+        # print(self.policy.critic.state_dict().keys())
+        return list(self.policy.actor.parameters()) + list(self.policy.critic.parameters())
+    def eval_log_prob(self, obs, act):
+        mean_actions, log_std, kwargs = self.policy.actor.get_action_dist_params(obs)
+        # return action and associated log prob
+        dist = self.policy.actor.action_dist.proba_distribution(mean_actions, log_std)
+        return dist.log_prob(act)
+
+    def calulate_grad_from_buffer(self, replay_data):
+        # We need to sample because `log_std` may have changed between two gradient steps
+        if self.use_sde:
+            self.actor.reset_noise()
+
+        # Action by the current actor for the sampled state
+        actions_pi, log_prob = self.actor.action_log_prob(replay_data.observations)
+        log_prob = log_prob.reshape(-1, 1)
+
+        ent_coef_loss = None
+        if self.ent_coef_optimizer is not None:
+            # Important: detach the variable from the graph
+            # so we don't change it with other losses
+            # see https://github.com/rail-berkeley/softlearning/issues/60
+            ent_coef = th.exp(self.log_ent_coef.detach())
+            ent_coef_loss = -(self.log_ent_coef * (log_prob + self.target_entropy).detach()).mean()
+        else:
+            ent_coef = self.ent_coef_tensor
+
+        with th.no_grad():
+            # Select action according to policy
+            next_actions, next_log_prob = self.actor.action_log_prob(replay_data.next_observations)
+            # Compute the target Q value: min over all critics targets
+            targets = th.cat(self.critic_target(replay_data.next_observations, next_actions), dim=1)
+            target_q, _ = th.min(targets, dim=1, keepdim=True)
+            # add entropy term
+            target_q = target_q - ent_coef * next_log_prob.reshape(-1, 1)
+            # td error + entropy term
+            q_backup = replay_data.rewards + (1 - replay_data.dones) * self.gamma * target_q
+
+        # Get current Q estimates for each critic network
+        # using action from the replay buffer
+        current_q_estimates = self.critic(replay_data.observations, replay_data.actions)
+
+        # Compute critic loss
+        critic_loss = 0.5 * sum([F.mse_loss(current_q, q_backup) for current_q in current_q_estimates])
+
+        # Compute actor loss
+        # Alternative: actor_loss = th.mean(log_prob - qf1_pi)
+        # Mean over all critic networks
+        q_values_pi = th.cat(self.critic.forward(replay_data.observations, actions_pi), dim=1)
+        min_qf_pi, _ = th.min(q_values_pi, dim=1, keepdim=True)
+        actor_loss = (ent_coef * log_prob - min_qf_pi).mean()
+
+        loss = actor_loss + 0*critic_loss
+
+        params = self.parameters()
+        grad_f = torch.autograd.grad(loss, inputs=params, create_graph=True)
+        # Optimization step
+
+        return loss, grad_f
+
     def train(self, gradient_steps: int, batch_size: int = 100) -> None:
         # Switch to train mode (this affects batch norm / dropout)
         self.policy.set_training_mode(True)
