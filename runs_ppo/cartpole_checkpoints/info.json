@@ -1,0 +1,7 @@
+{
+    "agent_name": "SB3_OFF",
+    "env": "CartPole-v1",
+    "hyperparameters": {
+        "ALGO": "DQN"
+    }
+}

@@ -4,14 +4,15 @@ import importlib
 from collections import OrderedDict
 from pprint import pprint
 from typing import Any, Callable, Dict, Optional, Tuple, Union
-
 import gym
 import numpy as np
 import yaml
 #import pybulletgym
 import stable_baselines3
 print(stable_baselines3.__file__)
-
+#import sam optimizer
+from reward_surfaces.agents.sam.sam import SAM
+from torch.optim import Adam
 # For using HER with GoalEnv
 from stable_baselines3.common.base_class import BaseAlgorithm
 from stable_baselines3.common.env_util import make_vec_env
@@ -32,11 +33,11 @@ from torch import nn as nn  # noqa: F401
 from stable_baselines3.ddpg import DDPG
 from stable_baselines3.td3 import TD3
 from stable_baselines3 import DQN
-from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC
+from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, SAM_DDPG, SAM_EXTPPO
 ALGOS = {
     "a2c": ExtA2C,
-    "ppo": ExtPPO,
-    "ddpg": DDPG,
+    "ppo": SAM_EXTPPO,
+    "ddpg": SAM_DDPG,
     "td3": TD3,
     "sac": ExtSAC,
     "dqn": DQN,
@@ -539,7 +540,7 @@ class ExperimentManager:
         if "policy_kwargs" in hyperparams.keys():
             del hyperparams["policy_kwargs"]
 
-        model = ALGOS[self.algo].load(
+        model = DDPG.load(
             agent,
             env=env,
             seed=self.seed,
