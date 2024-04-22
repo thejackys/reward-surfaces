@@ -11,7 +11,7 @@ setuptools.setup(
     description="Reaserch tool for understanding reinforcement learning optimization",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/benblack769/reward-surfaces",
+    url="https://github.com/thejackys/reward-surfaces",
     keywords=["Machine Learning", "Job Scheduling"],
     packages=["reward_surfaces"]+["reward_surfaces."+pkg for pkg in setuptools.find_packages("reward_surfaces")],
     install_requires=[

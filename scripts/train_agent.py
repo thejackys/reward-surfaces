@@ -46,7 +46,8 @@ def main():
         print(zip_path)
 
     # trainer = SB3HerPolicyTrainer(robo_env_fn,HER("MlpPolicy",robo_env_fn(),model_class=TD3,device="cpu",max_episode_length=100))
-    print(args.resume)
+    # print(args.resume)
+    print(args.hyperparameters)
     agent, steps = make_agent(args.agent_name, args.env, args.save_dir, json.loads(args.hyperparameters),
                               pretraining=pretraining, device=args.device, eval_freq=args.eval_freq)
 

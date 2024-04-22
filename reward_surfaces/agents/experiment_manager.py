@@ -33,11 +33,11 @@ from torch import nn as nn  # noqa: F401
 from stable_baselines3.ddpg import DDPG
 from stable_baselines3.td3 import TD3
 from stable_baselines3 import DQN
-from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC
+from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, SAM_DDPG, SAM_EXTPPO
 ALGOS = {
     "a2c": ExtA2C,
-    "ppo": ExtPPO,
-    "ddpg": DDPG,
+    "ppo": SAM_EXTPPO,
+    "ddpg": SAM_DDPG,
     "td3": TD3,
     "sac": ExtSAC,
     "dqn": DQN,

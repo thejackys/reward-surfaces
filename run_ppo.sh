@@ -8,15 +8,22 @@ SECONDS=0
 export CUDA_VISIBLE_DEVICES=$gpu
 # do some work
 
-python3 scripts/train_agent.py "./runs/${checkpoint_name}_checkpoints" SB3_OFF ${env_name} cuda '{"ALGO": "DQN"}' --save_freq=10000
+python3 scripts/train_agent.py "./runs/${checkpoint_name}_checkpoints" SB3_ON ${env_name} cuda '{"ALGO": "PPO"}' --save_freq=10000
 duration=$SECONDS
 echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed." > log.txt
 
+
+# ################
+# ###eval####
+# ########
 # python3 scripts/generate_eval_jobs.py --batch-grad --num-steps=1024 --num-episodes=2000 "./runs/${checkpoint_name}_checkpoints" "./runs/eval_grad/${checkpoint_name}/"
 # python3 scripts/run_jobs_multiproc.py --num-cpus=64 "./runs/eval_grad/${checkpoint_name}/jobs.sh"
 # duration=$SECONDS
 # echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed." >> log.txt
 
+#####################
+# #######Graphing######
+# ####################
 # python3 scripts/generate_plane_jobs.py --grid-size=31 --magnitude=1.0 --num-steps=20000 "./runs/${checkpoint_name}_checkpoints/best/" "./runs/${checkpoint_name}_surface/"
 # duration=$SECONDS
 # echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed." >> log.txt

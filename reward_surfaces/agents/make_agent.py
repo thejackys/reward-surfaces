@@ -5,7 +5,7 @@ from stable_baselines3 import DQN
 import gym
 from .SB3 import SB3OnPolicyTrainer, SB3OffPolicyTrainer, SB3HerPolicyTrainer
 from .rainbow.rainbow_trainer import RainbowTrainer
-from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, ExtDQN
+from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, ExtDQN, SAM_EXTPPO, SAM_DDPG
 from .experiment_manager import ExperimentManager
 import sys
 sys.path.append('./sam/sam.py')
@@ -16,10 +16,10 @@ from torch.optim import Adam
 
 SB3_ON_ALGOS = {
     "A2C": ExtA2C,
-    "PPO": ExtPPO,
+    "PPO": SAM_EXTPPO,
 }
 SB3_OFF_ALGOS = {
-    "DDPG": DDPG,
+    "DDPG": SAM_DDPG,
     "TD3": TD3,
     "SAC": ExtSAC,
     "DQN": ExtDQN,
@@ -58,11 +58,7 @@ def make_agent(agent_name, env_name, save_dir, hyperparams, device="cuda", pretr
         model, _, steps = manager.setup_experiment()
         env_fn = make_vec_env_fn(env_name, manager)
         eval_env_fn = make_vec_env_fn(env_name, manager, is_eval=True)
-        env = env_fn()
-        algo = SB3_OFF_ALGOS[algo_name]
-        model = "MlpPolicy" if len(env.observation_space.shape) != 3 else "CnnPolicy"
-        alg = algo(model, env, device=device, **hyperparams)
-        return SB3OffPolicyTrainer(env_fn, alg, manager.n_envs, env_name, eval_env_fn=eval_env_fn,
+        return SB3OffPolicyTrainer(env_fn, model, manager.n_envs, env_name, eval_env_fn=eval_env_fn,
                                    pretraining=pretraining, eval_freq=eval_freq, n_eval_episodes=n_eval_episodes),steps
     elif "SB3_ON" == agent_name:
         algo_name = hyperparams.pop('ALGO')

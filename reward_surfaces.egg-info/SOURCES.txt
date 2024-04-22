@@ -25,6 +25,8 @@ reward_surfaces/agents/rainbow/Rainbow/main.py
 reward_surfaces/agents/rainbow/Rainbow/memory.py
 reward_surfaces/agents/rainbow/Rainbow/model.py
 reward_surfaces/agents/rainbow/Rainbow/test.py
+reward_surfaces/agents/sam/__init__.py
+reward_surfaces/agents/sam/sam.py
 reward_surfaces/algorithms/__init__.py
 reward_surfaces/algorithms/eval_policy_hess.py
 reward_surfaces/algorithms/evaluate.py
