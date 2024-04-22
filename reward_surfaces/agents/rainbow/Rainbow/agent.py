@@ -8,6 +8,7 @@ from torch.nn.utils import clip_grad_norm_
 
 from .model import DQN
 from ...utils import clip_norm_
+from sam import SAM
 
 
 class Agent():
@@ -43,8 +44,9 @@ class Agent():
     self.target_net.train()
     for param in self.target_net.parameters():
       param.requires_grad = False
-
-    self.optimiser = optim.Adam(self.online_net.parameters(), lr=args.learning_rate, eps=args.adam_eps)
+  
+    #self.optimiser = optim.Adam(self.online_net.parameters(), lr=args.learning_rate, eps=args.adam_eps)
+    self.optimiser=SAM(self.online_net.parameters(),optim.Adam) #SAM change
 
   # Resets noisy weights in all linear layers (of online net only)
   def reset_noise(self):
@@ -108,7 +110,12 @@ class Agent():
     self.online_net.zero_grad()
     loss.backward()  # Backpropagate importance-weighted minibatch loss
     clip_grad_norm_(self.online_net.parameters(), self.norm_clip)  # Clip gradients by L2 norm
-    self.optimiser.step()
+    def closure():
+      idxs, states, actions, returns, next_states, nonterminals, weights = sample
+      loss = self.get_loss(idxs, states, actions, returns, next_states, nonterminals, weights)
+      return loss
+      
+    self.optimiser.step(closure)
 
     mem.update_priorities(idxs, loss.detach().cpu().numpy())  # Update priorities of sampled transitions
 
