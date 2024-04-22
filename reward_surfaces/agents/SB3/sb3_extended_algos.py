@@ -300,4 +300,6 @@ class ExtSAC(SAC, HeshCalcOfflineMixin):
         return loss, grad_f
 
 class ExtDQN(DQN, HeshCalcOfflineMixin):
-    raise NotImplementedError
+    
+    pass
+    # raise NotImplementedError

@@ -4,8 +4,9 @@ MountainCarContinuous-v0:
   policy: 'MlpPolicy'
   noise_type: 'ornstein-uhlenbeck'
   noise_std: 0.5
+  policy_kwargs: "dict(optimizer_class=SAM)"
 
-Pendulum-v0:
+Pendulum-v1:
   n_timesteps: 20000
   policy: 'MlpPolicy'
   gamma: 0.98
@@ -16,8 +17,7 @@ Pendulum-v0:
   gradient_steps: -1
   train_freq: [1, "episode"]
   learning_rate: !!float 1e-3
-  policy_kwargs: "dict(net_arch=[400, 300])"
-
+  policy_kwargs: "dict(net_arch=[400, 300], optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 LunarLanderContinuous-v2:
   n_timesteps: !!float 3e5
   policy: 'MlpPolicy'
@@ -29,7 +29,7 @@ LunarLanderContinuous-v2:
   gradient_steps: -1
   train_freq: [1, "episode"]
   learning_rate: !!float 1e-3
-  policy_kwargs: "dict(net_arch=[400, 300])"
+  policy_kwargs: "dict(net_arch=[400, 300], optimizer_class=SAM)"
 
 BipedalWalker-v3:
   n_timesteps: !!float 1e6

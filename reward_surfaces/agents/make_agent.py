@@ -5,8 +5,14 @@ from stable_baselines3 import DQN
 import gym
 from .SB3 import SB3OnPolicyTrainer, SB3OffPolicyTrainer, SB3HerPolicyTrainer
 from .rainbow.rainbow_trainer import RainbowTrainer
-from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC
+from .SB3.sb3_extended_algos import ExtA2C, ExtPPO, ExtSAC, ExtDQN
 from .experiment_manager import ExperimentManager
+import sys
+sys.path.append('./sam/sam.py')
+from reward_surfaces.agents.sam.sam import SAM
+from torch.optim import Adam
+
+
 
 SB3_ON_ALGOS = {
     "A2C": ExtA2C,
@@ -16,7 +22,7 @@ SB3_OFF_ALGOS = {
     "DDPG": DDPG,
     "TD3": TD3,
     "SAC": ExtSAC,
-    "DQN": DQN,
+    "DQN": ExtDQN,
 }
 
 

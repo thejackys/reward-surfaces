@@ -34,6 +34,7 @@ def main():
     agent.load_weights(checkpoint_path)
 
     eval_agent = None
+    print(args.use_offset_critic)
     if args.use_offset_critic:
         eval_agent = make_agent(info['agent_name'], info['env'], args.job_dir, info['hyperparameters'], device=info['device'])
         eval_agent.load_weights(checkpoint_path)
