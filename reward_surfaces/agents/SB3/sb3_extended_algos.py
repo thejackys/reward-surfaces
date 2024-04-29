@@ -366,11 +366,12 @@ class SAM_EXTPPO(ExtPPO):
                     break
 
                 # Optimization step
-                self.policy.optimizer.zero_grad()
+               
                 loss.backward()
                 # Clip grad norm
                 th.nn.utils.clip_grad_norm_(self.policy.parameters(), self.max_grad_norm)
                 self.policy.optimizer.step(closure)
+                self.policy.optimizer.zero_grad()
 
             self._n_updates += 1
             if not continue_training:
@@ -567,11 +568,9 @@ class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
                 critic_loss.backward()
                 return critic_loss
             # Optimize the critics
-            self.critic.optimizer.zero_grad()
             critic_loss.backward()
             self.critic.optimizer.step(closure1)
-            
-            
+            self.critic.optimizer.zero_grad()
             # Delayed policy updates
             if self._n_updates % self.policy_delay == 0:
                 # Compute actor loss
@@ -581,11 +580,11 @@ class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
                     actor_loss = -self.critic.q1_forward(replay_data.observations, self.actor(replay_data.observations)).mean()
                     actor_loss.backward()
                     return actor_loss
+
                 # Optimize the actor
-                self.actor.optimizer.zero_grad()
                 actor_loss.backward()
                 self.actor.optimizer.step(closure2)
-                
+                self.actor.optimizer.zero_grad()
 
                 polyak_update(self.critic.parameters(), self.critic_target.parameters(), self.tau)
                 polyak_update(self.actor.parameters(), self.actor_target.parameters(), self.tau)
