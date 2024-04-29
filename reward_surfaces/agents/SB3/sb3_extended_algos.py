@@ -520,7 +520,6 @@ class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
         # Optimization step
 
         return loss, grad_f
-
     def train(self, gradient_steps: int, batch_size: int = 100) -> None:
         # Switch to train mode (this affects batch norm / dropout)
         self.policy.set_training_mode(True)
@@ -553,33 +552,40 @@ class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
             assert isinstance(critic_loss, th.Tensor)
             critic_losses.append(critic_loss.item())
             def closure1():
-              with th.no_grad():
-                noise = replay_data.actions.clone().data.normal_(0, self.target_policy_noise)
-                noise = noise.clamp(-self.target_noise_clip, self.target_noise_clip)
-                next_actions = (self.actor_target(replay_data.next_observations) + noise).clamp(-1, 1)
-                next_q_values = th.cat(self.critic_target(replay_data.next_observations, next_actions), dim=1)
-                next_q_values, _ = th.min(next_q_values, dim=1, keepdim=True)
-                target_q_values = replay_data.rewards + (1 - replay_data.dones) * self.gamma * next_q_values
-              current_q_values = self.critic(replay_data.observations, replay_data.actions)
-              critic_loss = sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
-              return critic_loss
+                replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)  # type: ignore[union-attr]
+
+                with th.no_grad():
+                    noise = replay_data.actions.clone().data.normal_(0, self.target_policy_noise)
+                    noise = noise.clamp(-self.target_noise_clip, self.target_noise_clip)
+                    next_actions = (self.actor_target(replay_data.next_observations) + noise).clamp(-1, 1)
+
+                    next_q_values = th.cat(self.critic_target(replay_data.next_observations, next_actions), dim=1)
+                    next_q_values, _ = th.min(next_q_values, dim=1, keepdim=True)
+                    target_q_values = replay_data.rewards + (1 - replay_data.dones) * self.gamma * next_q_values
+                current_q_values = self.critic(replay_data.observations, replay_data.actions)
+                critic_loss = sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
+                critic_loss.backward()
+                return critic_loss
             # Optimize the critics
             self.critic.optimizer.zero_grad()
             critic_loss.backward()
             self.critic.optimizer.step(closure1)
-
+            
+            
             # Delayed policy updates
             if self._n_updates % self.policy_delay == 0:
                 # Compute actor loss
                 actor_loss = -self.critic.q1_forward(replay_data.observations, self.actor(replay_data.observations)).mean()
                 actor_losses.append(actor_loss.item())
                 def closure2():
-                  actor_loss = -self.critic.q1_forward(replay_data.observations, self.actor(replay_data.observations)).mean()
-                  return actor_loss
+                    actor_loss = -self.critic.q1_forward(replay_data.observations, self.actor(replay_data.observations)).mean()
+                    actor_loss.backward()
+                    return actor_loss
                 # Optimize the actor
                 self.actor.optimizer.zero_grad()
                 actor_loss.backward()
                 self.actor.optimizer.step(closure2)
+                
 
                 polyak_update(self.critic.parameters(), self.critic_target.parameters(), self.tau)
                 polyak_update(self.actor.parameters(), self.actor_target.parameters(), self.tau)
@@ -591,8 +597,6 @@ class SAM_DDPG(DDPG, HeshCalcOfflineMixin):
         if len(actor_losses) > 0:
             self.logger.record("train/actor_loss", np.mean(actor_losses))
         self.logger.record("train/critic_loss", np.mean(critic_losses))
-
-
     
 class ExtDQN(DQN, HeshCalcOfflineMixin):
     

@@ -7,7 +7,7 @@ MountainCarContinuous-v0:
   policy_kwargs: "dict(net_arch=[400, 300], optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 Pendulum-v1:
-  n_timesteps: 20000
+  n_timesteps: 40000
   policy: 'MlpPolicy'
   gamma: 0.98
   buffer_size: 200000
