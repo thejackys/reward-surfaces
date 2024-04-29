@@ -1,3 +1,10 @@
+This is a fork intended to observe the effect of the SAM optimizer on the reward surfaces. 
+To run the experiment, run 
+```bash
+bash sam_experiment.sh
+```
+The surface graphs will be generated in run/.
+
 ## Install
 
 ```
