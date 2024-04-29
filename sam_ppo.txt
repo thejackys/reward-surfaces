@@ -1,0 +1,1663 @@
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+{"ALGO": "ppo_sam"}
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: ./runs/sam_ppo_Pendulum_checkpoints/ppo_sam/Pendulum-v1_3
+saved checkpoint 0010000
+Eval num_timesteps=10000, episode_reward=-1266.16 +/- 309.78
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0020000
+Eval num_timesteps=20000, episode_reward=-1298.81 +/- 293.18
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0030000
+Eval num_timesteps=30000, episode_reward=-1233.98 +/- 325.22
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0040000
+Eval num_timesteps=40000, episode_reward=-1194.30 +/- 283.98
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0050000
+Eval num_timesteps=50000, episode_reward=-1168.38 +/- 248.17
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0060000
+Eval num_timesteps=60000, episode_reward=-1194.69 +/- 312.84
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0070000
+Eval num_timesteps=70000, episode_reward=-1109.64 +/- 250.05
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0080000
+Eval num_timesteps=80000, episode_reward=-1120.71 +/- 250.68
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0090000
+Eval num_timesteps=90000, episode_reward=-1200.34 +/- 272.28
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0100000
+Eval num_timesteps=100000, episode_reward=-1124.83 +/- 255.10
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0110000
+Eval num_timesteps=110000, episode_reward=-1088.77 +/- 176.85
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0120000
+Eval num_timesteps=120000, episode_reward=-1186.41 +/- 244.09
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0130000
+Eval num_timesteps=130000, episode_reward=-1073.89 +/- 183.04
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0140000
+Eval num_timesteps=140000, episode_reward=-1054.87 +/- 182.69
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0150000
+Eval num_timesteps=150000, episode_reward=-1036.53 +/- 188.52
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0160000
+Eval num_timesteps=160000, episode_reward=-1009.71 +/- 159.26
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0170000
+Eval num_timesteps=170000, episode_reward=-933.80 +/- 164.83
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0180000
+Eval num_timesteps=180000, episode_reward=-956.88 +/- 187.36
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0190000
+Eval num_timesteps=190000, episode_reward=-928.09 +/- 163.49
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0200000
+Eval num_timesteps=200000, episode_reward=-854.14 +/- 130.35
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0210000
+Eval num_timesteps=210000, episode_reward=-851.17 +/- 148.68
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0220000
+Eval num_timesteps=220000, episode_reward=-922.87 +/- 163.69
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0230000
+Eval num_timesteps=230000, episode_reward=-779.87 +/- 152.90
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0240000
+Eval num_timesteps=240000, episode_reward=-811.16 +/- 142.88
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0250000
+Eval num_timesteps=250000, episode_reward=-785.79 +/- 133.53
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0260000
+Eval num_timesteps=260000, episode_reward=-755.21 +/- 131.54
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0270000
+Eval num_timesteps=270000, episode_reward=-636.45 +/- 110.76
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0280000
+Eval num_timesteps=280000, episode_reward=-647.68 +/- 134.14
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0290000
+Eval num_timesteps=290000, episode_reward=-683.09 +/- 149.72
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0300000
+Eval num_timesteps=300000, episode_reward=-523.36 +/- 137.37
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0310000
+Eval num_timesteps=310000, episode_reward=-474.61 +/- 169.66
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0320000
+Eval num_timesteps=320000, episode_reward=-465.47 +/- 142.66
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0330000
+Eval num_timesteps=330000, episode_reward=-273.11 +/- 152.88
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0340000
+Eval num_timesteps=340000, episode_reward=-362.59 +/- 129.19
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0350000
+Eval num_timesteps=350000, episode_reward=-332.19 +/- 176.63
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0360000
+Eval num_timesteps=360000, episode_reward=-349.02 +/- 162.10
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0370000
+Eval num_timesteps=370000, episode_reward=-170.85 +/- 108.05
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0380000
+Eval num_timesteps=380000, episode_reward=-236.48 +/- 130.04
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0390000
+Eval num_timesteps=390000, episode_reward=-226.34 +/- 138.64
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0400000
+Eval num_timesteps=400000, episode_reward=-154.62 +/- 125.97
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0410000
+Eval num_timesteps=410000, episode_reward=-202.18 +/- 145.99
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0420000
+Eval num_timesteps=420000, episode_reward=-183.98 +/- 107.23
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0430000
+Eval num_timesteps=430000, episode_reward=-186.67 +/- 116.36
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0440000
+Eval num_timesteps=440000, episode_reward=-193.55 +/- 130.20
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0450000
+Eval num_timesteps=450000, episode_reward=-225.67 +/- 126.91
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0460000
+Eval num_timesteps=460000, episode_reward=-160.73 +/- 76.08
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0470000
+Eval num_timesteps=470000, episode_reward=-176.84 +/- 77.14
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0480000
+Eval num_timesteps=480000, episode_reward=-200.12 +/- 121.10
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0490000
+Eval num_timesteps=490000, episode_reward=-176.94 +/- 110.75
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0500000
+Eval num_timesteps=500000, episode_reward=-181.03 +/- 99.81
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0510000
+Eval num_timesteps=510000, episode_reward=-178.97 +/- 117.22
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0520000
+Eval num_timesteps=520000, episode_reward=-171.72 +/- 98.61
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0530000
+Eval num_timesteps=530000, episode_reward=-144.60 +/- 85.16
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0540000
+Eval num_timesteps=540000, episode_reward=-160.02 +/- 109.38
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0550000
+Eval num_timesteps=550000, episode_reward=-198.81 +/- 104.64
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0560000
+Eval num_timesteps=560000, episode_reward=-175.33 +/- 84.73
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0570000
+Eval num_timesteps=570000, episode_reward=-176.38 +/- 85.17
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0580000
+Eval num_timesteps=580000, episode_reward=-161.26 +/- 91.65
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0590000
+Eval num_timesteps=590000, episode_reward=-161.49 +/- 94.59
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0600000
+Eval num_timesteps=600000, episode_reward=-163.89 +/- 69.14
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0610000
+Eval num_timesteps=610000, episode_reward=-197.42 +/- 112.75
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0620000
+Eval num_timesteps=620000, episode_reward=-157.16 +/- 86.71
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0630000
+Eval num_timesteps=630000, episode_reward=-162.98 +/- 92.84
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0640000
+Eval num_timesteps=640000, episode_reward=-152.94 +/- 93.89
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0650000
+Eval num_timesteps=650000, episode_reward=-168.99 +/- 99.79
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0660000
+Eval num_timesteps=660000, episode_reward=-159.37 +/- 86.39
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0670000
+Eval num_timesteps=670000, episode_reward=-186.41 +/- 105.59
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0680000
+Eval num_timesteps=680000, episode_reward=-159.58 +/- 89.78
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0690000
+Eval num_timesteps=690000, episode_reward=-143.85 +/- 83.78
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0700000
+Eval num_timesteps=700000, episode_reward=-153.63 +/- 104.76
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0710000
+Eval num_timesteps=710000, episode_reward=-176.36 +/- 90.70
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0720000
+Eval num_timesteps=720000, episode_reward=-174.57 +/- 72.20
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0730000
+Eval num_timesteps=730000, episode_reward=-163.08 +/- 84.34
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0740000
+Eval num_timesteps=740000, episode_reward=-145.48 +/- 79.91
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0750000
+Eval num_timesteps=750000, episode_reward=-139.33 +/- 98.44
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0760000
+Eval num_timesteps=760000, episode_reward=-159.29 +/- 95.72
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0770000
+Eval num_timesteps=770000, episode_reward=-170.71 +/- 85.03
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0780000
+Eval num_timesteps=780000, episode_reward=-172.91 +/- 105.11
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0790000
+Eval num_timesteps=790000, episode_reward=-164.85 +/- 84.72
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0800000
+Eval num_timesteps=800000, episode_reward=-130.68 +/- 88.22
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0810000
+Eval num_timesteps=810000, episode_reward=-159.70 +/- 93.58
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0820000
+Eval num_timesteps=820000, episode_reward=-138.01 +/- 86.42
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0830000
+Eval num_timesteps=830000, episode_reward=-144.78 +/- 75.66
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0840000
+Eval num_timesteps=840000, episode_reward=-144.37 +/- 85.05
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0850000
+Eval num_timesteps=850000, episode_reward=-149.41 +/- 88.21
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0860000
+Eval num_timesteps=860000, episode_reward=-156.94 +/- 88.36
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0870000
+Eval num_timesteps=870000, episode_reward=-136.91 +/- 82.42
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0880000
+Eval num_timesteps=880000, episode_reward=-154.33 +/- 82.61
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0890000
+Eval num_timesteps=890000, episode_reward=-151.58 +/- 69.14
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0900000
+Eval num_timesteps=900000, episode_reward=-183.10 +/- 86.24
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0910000
+Eval num_timesteps=910000, episode_reward=-143.76 +/- 86.31
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0920000
+Eval num_timesteps=920000, episode_reward=-130.39 +/- 93.74
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 0930000
+Eval num_timesteps=930000, episode_reward=-144.98 +/- 89.50
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0940000
+Eval num_timesteps=940000, episode_reward=-145.52 +/- 64.75
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0950000
+Eval num_timesteps=950000, episode_reward=-155.12 +/- 72.32
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0960000
+Eval num_timesteps=960000, episode_reward=-168.40 +/- 93.31
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0970000
+Eval num_timesteps=970000, episode_reward=-148.08 +/- 96.61
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0980000
+Eval num_timesteps=980000, episode_reward=-172.36 +/- 83.42
+Episode length: 200.00 +/- 0.00
+saved checkpoint 0990000
+Eval num_timesteps=990000, episode_reward=-146.84 +/- 96.99
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1000000
+Eval num_timesteps=1000000, episode_reward=-156.63 +/- 115.88
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1010000
+Eval num_timesteps=1010000, episode_reward=-160.55 +/- 84.41
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1020000
+Eval num_timesteps=1020000, episode_reward=-152.53 +/- 86.71
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1030000
+Eval num_timesteps=1030000, episode_reward=-155.70 +/- 77.88
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1040000
+Eval num_timesteps=1040000, episode_reward=-142.57 +/- 74.20
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1050000
+Eval num_timesteps=1050000, episode_reward=-139.97 +/- 84.62
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1060000
+Eval num_timesteps=1060000, episode_reward=-127.45 +/- 85.34
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 1070000
+Eval num_timesteps=1070000, episode_reward=-133.44 +/- 84.18
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1080000
+Eval num_timesteps=1080000, episode_reward=-162.70 +/- 91.33
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1090000
+Eval num_timesteps=1090000, episode_reward=-158.17 +/- 81.76
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1100000
+Eval num_timesteps=1100000, episode_reward=-150.58 +/- 100.21
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1110000
+Eval num_timesteps=1110000, episode_reward=-163.01 +/- 91.67
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1120000
+Eval num_timesteps=1120000, episode_reward=-152.26 +/- 82.72
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1130000
+Eval num_timesteps=1130000, episode_reward=-153.00 +/- 91.47
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1140000
+Eval num_timesteps=1140000, episode_reward=-118.71 +/- 81.02
+Episode length: 200.00 +/- 0.00
+New best mean reward!
+saved checkpoint 1150000
+Eval num_timesteps=1150000, episode_reward=-151.52 +/- 93.10
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1160000
+Eval num_timesteps=1160000, episode_reward=-144.23 +/- 89.89
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1170000
+Eval num_timesteps=1170000, episode_reward=-152.08 +/- 78.18
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1180000
+Eval num_timesteps=1180000, episode_reward=-152.86 +/- 87.00
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1190000
+Eval num_timesteps=1190000, episode_reward=-146.15 +/- 82.54
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1200000
+Eval num_timesteps=1200000, episode_reward=-136.71 +/- 80.21
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1210000
+Eval num_timesteps=1210000, episode_reward=-154.10 +/- 79.25
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1220000
+Eval num_timesteps=1220000, episode_reward=-158.86 +/- 85.39
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1230000
+Eval num_timesteps=1230000, episode_reward=-149.96 +/- 86.27
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1240000
+Eval num_timesteps=1240000, episode_reward=-165.67 +/- 90.65
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1250000
+Eval num_timesteps=1250000, episode_reward=-156.56 +/- 96.05
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1260000
+Eval num_timesteps=1260000, episode_reward=-148.57 +/- 83.73
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1270000
+Eval num_timesteps=1270000, episode_reward=-132.06 +/- 82.43
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1280000
+Eval num_timesteps=1280000, episode_reward=-126.57 +/- 68.07
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1290000
+Eval num_timesteps=1290000, episode_reward=-122.88 +/- 89.89
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1300000
+Eval num_timesteps=1300000, episode_reward=-133.84 +/- 90.59
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1310000
+Eval num_timesteps=1310000, episode_reward=-135.22 +/- 67.43
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1320000
+Eval num_timesteps=1320000, episode_reward=-147.76 +/- 81.65
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1330000
+Eval num_timesteps=1330000, episode_reward=-155.97 +/- 79.08
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1340000
+Eval num_timesteps=1340000, episode_reward=-145.89 +/- 107.46
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1350000
+Eval num_timesteps=1350000, episode_reward=-140.77 +/- 88.43
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1360000
+Eval num_timesteps=1360000, episode_reward=-151.19 +/- 65.88
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1370000
+Eval num_timesteps=1370000, episode_reward=-122.65 +/- 66.30
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1380000
+Eval num_timesteps=1380000, episode_reward=-163.79 +/- 85.46
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1390000
+Eval num_timesteps=1390000, episode_reward=-165.88 +/- 95.70
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1400000
+Eval num_timesteps=1400000, episode_reward=-137.17 +/- 99.97
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1410000
+Eval num_timesteps=1410000, episode_reward=-157.95 +/- 102.28
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1420000
+Eval num_timesteps=1420000, episode_reward=-140.08 +/- 97.42
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1430000
+Eval num_timesteps=1430000, episode_reward=-172.78 +/- 78.88
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1440000
+Eval num_timesteps=1440000, episode_reward=-142.59 +/- 112.84
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1450000
+Eval num_timesteps=1450000, episode_reward=-167.90 +/- 82.99
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1460000
+Eval num_timesteps=1460000, episode_reward=-146.19 +/- 84.51
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1470000
+Eval num_timesteps=1470000, episode_reward=-149.24 +/- 97.11
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1480000
+Eval num_timesteps=1480000, episode_reward=-152.98 +/- 99.98
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1490000
+Eval num_timesteps=1490000, episode_reward=-149.71 +/- 93.48
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1500000
+Eval num_timesteps=1500000, episode_reward=-147.25 +/- 87.82
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1510000
+Eval num_timesteps=1510000, episode_reward=-158.72 +/- 76.19
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1520000
+Eval num_timesteps=1520000, episode_reward=-149.07 +/- 81.58
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1530000
+Eval num_timesteps=1530000, episode_reward=-145.46 +/- 89.67
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1540000
+Eval num_timesteps=1540000, episode_reward=-128.66 +/- 87.27
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1550000
+Eval num_timesteps=1550000, episode_reward=-145.79 +/- 100.30
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1560000
+Eval num_timesteps=1560000, episode_reward=-129.54 +/- 82.56
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1570000
+Eval num_timesteps=1570000, episode_reward=-143.79 +/- 84.72
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1580000
+Eval num_timesteps=1580000, episode_reward=-160.93 +/- 97.29
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1590000
+Eval num_timesteps=1590000, episode_reward=-155.55 +/- 96.47
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1600000
+Eval num_timesteps=1600000, episode_reward=-137.56 +/- 80.17
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1610000
+Eval num_timesteps=1610000, episode_reward=-144.69 +/- 77.50
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1620000
+Eval num_timesteps=1620000, episode_reward=-146.15 +/- 76.74
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1630000
+Eval num_timesteps=1630000, episode_reward=-166.27 +/- 87.42
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1640000
+Eval num_timesteps=1640000, episode_reward=-165.34 +/- 97.19
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1650000
+Eval num_timesteps=1650000, episode_reward=-151.83 +/- 89.36
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1660000
+Eval num_timesteps=1660000, episode_reward=-146.13 +/- 75.00
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1670000
+Eval num_timesteps=1670000, episode_reward=-143.14 +/- 83.32
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1680000
+Eval num_timesteps=1680000, episode_reward=-126.44 +/- 99.00
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1690000
+Eval num_timesteps=1690000, episode_reward=-159.74 +/- 85.26
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1700000
+Eval num_timesteps=1700000, episode_reward=-123.48 +/- 76.35
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1710000
+Eval num_timesteps=1710000, episode_reward=-150.96 +/- 103.56
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1720000
+Eval num_timesteps=1720000, episode_reward=-129.33 +/- 103.43
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1730000
+Eval num_timesteps=1730000, episode_reward=-171.72 +/- 91.11
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1740000
+Eval num_timesteps=1740000, episode_reward=-138.89 +/- 91.85
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1750000
+Eval num_timesteps=1750000, episode_reward=-158.60 +/- 87.27
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1760000
+Eval num_timesteps=1760000, episode_reward=-147.60 +/- 84.34
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1770000
+Eval num_timesteps=1770000, episode_reward=-149.24 +/- 82.49
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1780000
+Eval num_timesteps=1780000, episode_reward=-133.95 +/- 85.54
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1790000
+Eval num_timesteps=1790000, episode_reward=-174.48 +/- 90.74
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1800000
+Eval num_timesteps=1800000, episode_reward=-145.16 +/- 92.24
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1810000
+Eval num_timesteps=1810000, episode_reward=-152.52 +/- 80.45
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1820000
+Eval num_timesteps=1820000, episode_reward=-171.31 +/- 73.51
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1830000
+Eval num_timesteps=1830000, episode_reward=-151.94 +/- 102.96
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1840000
+Eval num_timesteps=1840000, episode_reward=-180.33 +/- 102.93
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1850000
+Eval num_timesteps=1850000, episode_reward=-146.78 +/- 96.74
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1860000
+Eval num_timesteps=1860000, episode_reward=-141.16 +/- 72.57
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1870000
+Eval num_timesteps=1870000, episode_reward=-155.45 +/- 70.75
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1880000
+Eval num_timesteps=1880000, episode_reward=-137.71 +/- 84.29
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1890000
+Eval num_timesteps=1890000, episode_reward=-144.79 +/- 94.75
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1900000
+Eval num_timesteps=1900000, episode_reward=-143.02 +/- 82.77
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1910000
+Eval num_timesteps=1910000, episode_reward=-147.16 +/- 107.85
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1920000
+Eval num_timesteps=1920000, episode_reward=-139.23 +/- 83.33
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1930000
+Eval num_timesteps=1930000, episode_reward=-157.63 +/- 66.80
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1940000
+Eval num_timesteps=1940000, episode_reward=-142.32 +/- 82.34
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1950000
+Eval num_timesteps=1950000, episode_reward=-153.22 +/- 77.58
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1960000
+Eval num_timesteps=1960000, episode_reward=-160.50 +/- 87.04
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1970000
+Eval num_timesteps=1970000, episode_reward=-138.61 +/- 82.31
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1980000
+Eval num_timesteps=1980000, episode_reward=-132.71 +/- 86.29
+Episode length: 200.00 +/- 0.00
+saved checkpoint 1990000
+Eval num_timesteps=1990000, episode_reward=-146.13 +/- 67.46
+Episode length: 200.00 +/- 0.00
+saved checkpoint 2000000
+Eval num_timesteps=2000000, episode_reward=-145.04 +/- 82.86
+Episode length: 200.00 +/- 0.00
+saved checkpoint 2010000
+Eval num_timesteps=2010000, episode_reward=-139.73 +/- 76.70
+Episode length: 200.00 +/- 0.00
+saved checkpoint 2020000
+Eval num_timesteps=2020000, episode_reward=-161.15 +/- 90.67
+Episode length: 200.00 +/- 0.00
+saved checkpoint 2030000
+Eval num_timesteps=2030000, episode_reward=-148.83 +/- 81.30
+Episode length: 200.00 +/- 0.00
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1630000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  0760000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  0890000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  0570000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1200000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  0260000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1510000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  0200000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  0450000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1260000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  1890000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  1570000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  0130000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1390000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  0820000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0950000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0320000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1130000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  0510000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0010000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0070000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  2010000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1070000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_5
+evaluating  1450000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_6
+evaluating  0630000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1760000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1010000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0390000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1320000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1950000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1700000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  0700000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 64),
+             ('clip_range', 0.2),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.95),
+             ('gamma', 0.99),
+             ('learning_rate', 0.0003),
+             ('n_envs', 8),
+             ('n_epochs', 10),
+             ('n_steps', 4096),
+             ('n_timesteps', 2000000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_Pendulum/ppo_sam/Pendulum-v1_7
+evaluating  1820000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+{"ALGO": "ppo_sam"}
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: ./runs/sam_ppo_cartpole_checkpoints/ppo_sam/CartPole-v1_2
+saved checkpoint 0010000
+Eval num_timesteps=10000, episode_reward=26.88 +/- 13.39
+Episode length: 26.88 +/- 13.39
+New best mean reward!
+saved checkpoint 0020000
+Eval num_timesteps=20000, episode_reward=23.28 +/- 9.74
+Episode length: 23.28 +/- 9.74
+saved checkpoint 0030000
+Eval num_timesteps=30000, episode_reward=28.18 +/- 15.92
+Episode length: 28.18 +/- 15.92
+New best mean reward!
+saved checkpoint 0040000
+Eval num_timesteps=40000, episode_reward=26.56 +/- 16.27
+Episode length: 26.56 +/- 16.27
+saved checkpoint 0050000
+Eval num_timesteps=50000, episode_reward=23.70 +/- 10.73
+Episode length: 23.70 +/- 10.73
+saved checkpoint 0060000
+Eval num_timesteps=60000, episode_reward=22.68 +/- 10.86
+Episode length: 22.68 +/- 10.86
+saved checkpoint 0070000
+Eval num_timesteps=70000, episode_reward=22.82 +/- 10.74
+Episode length: 22.82 +/- 10.74
+saved checkpoint 0080000
+Eval num_timesteps=80000, episode_reward=23.46 +/- 12.40
+Episode length: 23.46 +/- 12.40
+saved checkpoint 0090000
+Eval num_timesteps=90000, episode_reward=24.04 +/- 12.47
+Episode length: 24.04 +/- 12.47
+saved checkpoint 0100000
+Eval num_timesteps=100000, episode_reward=21.90 +/- 11.46
+Episode length: 21.90 +/- 11.46
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_4
+evaluating  0010000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0100000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0050000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0090000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0020000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0040000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0070000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0060000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0080000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+Default hyperparameters for environment (ones being tuned will be overridden):
+OrderedDict([('batch_size', 256),
+             ('clip_range', 'lin_0.2'),
+             ('ent_coef', 0.0),
+             ('gae_lambda', 0.8),
+             ('gamma', 0.98),
+             ('learning_rate', 'lin_0.001'),
+             ('n_envs', 8),
+             ('n_epochs', 20),
+             ('n_steps', 256),
+             ('n_timesteps', 100000.0),
+             ('policy', 'MlpPolicy'),
+             ('policy_kwargs',
+              'dict(optimizer_class=SAM, '
+              'optimizer_kwargs=dict(base_optimizer=Adam))')])
+Using 8 environments
+cuda
+Log path: runs/eval_grad/sam_ppo_cartpole/ppo_sam/CartPole-v1_5
+evaluating  0030000
+Number of episodes: 200
+dumping results
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
+/data/yfs5313/conda/envs/rl_final/lib/python3.9/site-packages/stable_baselines3/__init__.py
