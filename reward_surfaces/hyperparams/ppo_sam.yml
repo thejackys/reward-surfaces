@@ -18,7 +18,7 @@ Pendulum-v1:
   n_envs: 8
   n_timesteps: !!float 2e6
   policy: 'MlpPolicy'
-  n_steps: 2048
+  n_steps: 4096
   batch_size: 64
   gae_lambda: 0.95
   gamma: 0.99
@@ -26,13 +26,14 @@ Pendulum-v1:
   ent_coef: 0.0
   learning_rate: !!float 3e-4
   clip_range: 0.2
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam, adaptive=True))"
 
 # Tuned
 CartPole-v1:
   n_envs: 8
   n_timesteps: !!float 1e5
   policy: 'MlpPolicy'
-  n_steps: 32
+  n_steps: 256
   batch_size: 256
   gae_lambda: 0.8
   gamma: 0.98
@@ -40,6 +41,7 @@ CartPole-v1:
   ent_coef: 0.0
   learning_rate: lin_0.001
   clip_range: lin_0.2
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam, adaptive=True))"
 
 MountainCar-v0:
   normalize: true
@@ -51,6 +53,7 @@ MountainCar-v0:
   gamma: 0.99
   n_epochs: 4
   ent_coef: 0.0
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 # Tuned
 MountainCarContinuous-v0:
@@ -69,7 +72,7 @@ MountainCarContinuous-v0:
   max_grad_norm: 5
   vf_coef: 0.19
   use_sde: True
-  policy_kwargs: "dict(log_std_init=-3.29, ortho_init=False)"
+  policy_kwargs: "dict(log_std_init=-3.29, ortho_init=False, optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
 
 Acrobot-v1:
   normalize: true
@@ -131,6 +134,8 @@ LunarLanderContinuous-v2:
   gamma: 0.999
   n_epochs: 4
   ent_coef: 0.01
+  policy_kwargs: "dict(optimizer_class=SAM, optimizer_kwargs=dict(base_optimizer=Adam))"
+
 
 # Tuned
 HalfCheetahBulletEnv-v0: &pybullet-defaults
@@ -244,7 +249,7 @@ MinitaurBulletDuckEnv-v0:
   clip_range: 0.2
 
 # To be tuned
-Humanoid-v3:
+HumanoidBulletEnv-v0:
   normalize: true
   n_envs: 8
   n_timesteps: !!float 1e7

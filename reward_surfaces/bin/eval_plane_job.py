@@ -16,8 +16,8 @@ torch.set_num_threads(1)
 def main():
     parser = argparse.ArgumentParser(description='generate jobs for plane')
     parser.add_argument('job_dir', type=str)
-    parser.add_argument('--offset1', type=float, help="if specified, looks for dir1.npz for parameter offset and multiplies it by offset, adds to parameter for evaluation")
-    parser.add_argument('--offset2', type=float, help="if specified, looks for dir2.npz for parameter offset and multiplies it by offset, adds to parameter for evaluation")
+    parser.add_argument('--offset1',type=float, help="if specified, looks for dir1.npz for parameter offset and multiplies it by offset, adds to parameter for evaluation")
+    parser.add_argument('--offset2',type=float, help="if specified, looks for dir2.npz for parameter offset and multiplies it by offset, adds to parameter for evaluation")
     #parser.add_argument('--device', type=str, default='cpu')
     parser.add_argument('--use_offset_critic', action='store_true')
 
@@ -34,7 +34,7 @@ def main():
     agent.load_weights(checkpoint_path)
 
     eval_agent = None
-    print(args.use_offset_critic)
+    # print(args.use_offset_critic)
     if args.use_offset_critic:
         eval_agent = make_agent(info['agent_name'], info['env'], args.job_dir, info['hyperparameters'], device=info['device'])
         eval_agent.load_weights(checkpoint_path)

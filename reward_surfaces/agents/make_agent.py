@@ -16,10 +16,12 @@ from torch.optim import Adam
 
 SB3_ON_ALGOS = {
     "A2C": ExtA2C,
-    "PPO": SAM_EXTPPO,
+    "PPO": ExtPPO,
+    "PPO_SAM": SAM_DDPG,
 }
 SB3_OFF_ALGOS = {
-    "DDPG": SAM_DDPG,
+    "DDPG": DDPG,
+    "DDPG_SAM": SAM_DDPG,
     "TD3": TD3,
     "SAC": ExtSAC,
     "DQN": ExtDQN,
